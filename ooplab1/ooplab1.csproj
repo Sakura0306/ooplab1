@@ -43,10 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
-    <Compile Include="Car.cs" />
-    <Compile Include="Human.cs" />
-    <Compile Include="Phone.cs" />
+    <Compile Include="animals\Animal.cs" />
+    <Compile Include="devices\Car.cs" />
+    <Compile Include="devices\Device.cs" />
+    <Compile Include="devices\Sellable.cs" />
+    <Compile Include="animals\Edible.cs" />
+    <Compile Include="animals\FarmAnimal.cs" />
+    <Compile Include="animals\Feedable.cs" />
+    <Compile Include="animals\Human.cs" />
+    <Compile Include="devices\Phone.cs" />
+    <Compile Include="animals\Pet.cs" />
+    <Compile Include="Diesel.cs" />
+    <Compile Include="Electric.cs" />
+    <Compile Include="Petrol.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

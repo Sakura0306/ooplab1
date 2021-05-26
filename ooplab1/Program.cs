@@ -1,44 +1,54 @@
-﻿using System;
+﻿using ooplab1.devices;
+using System;
 
-namespace OOPlab1 {
+namespace ooplab1 {
     class Program {
         static void Main(string[] args) {
-            Animal dog = new Animal(10.0);
+            Animal dog = new Animal("dog");
 
-            dog.Name = "Szarik";
+            dog.name = "Szarik";
 
-            dog.Feed(2.0);
+            dog.name = "Szarik";
 
-            string text = dog.ReturnSpeciesAndName();
-            Console.WriteLine(text);
-            text += " afawefawfawe";
-            Console.WriteLine(text);
+            Human me = new Human(1000.0);
+            me.firstName = "Kacper";
+            me.lastName = "Warda";
+            me.pet = dog;
 
-            String nameAndOwner = dog.ReturnNameAndOwner("Kacper");
-            Console.WriteLine(nameAndOwner);
-
-            Human me = new Human();
-            me.FirstName = "Kacper";
-            me.LastName = "Warda";
-            me.Pet = dog;
-
-            dog.Feed(1.0);
-            dog.PrintWeight();
-
-            me.Phone = new Phone("onePlus",
+            Phone onePlus = new Phone("onePlus",
                 "8Pro",
                 2.3,
                 "Android");
-            Console.WriteLine(me.Phone.Model);
+            Phone iPhone6 = new Phone("Apple", "6s", 5.0, "iOs");
 
-            me.Phone = new Phone("apple", "6s", 5.0, "iOs");
-            me.Salary = 10000.0m;
-            Console.WriteLine(me.Salary);
-            me.Salary = 100.0m;
-            Console.WriteLine(me.Salary);
-            me.Salary = -10.0m;
-            Console.WriteLine(me.Salary);
-            Console.WriteLine(me.Phone.Model);
+            Console.WriteLine("phone: " + onePlus);
+            Console.WriteLine("phone: " + iPhone6);
+            Console.WriteLine("human: " + me);
+
+            onePlus.TurnOn();
+
+            Car fiat = new Electric {
+                engineSize = 1.9,
+                fuelType = "disel",
+                producer = "Fiat",
+                model = "Bravo"
+            };
+
+            fiat.TurnOn();
+            iPhone6.TurnOn();
+            me.car = fiat;
+
+            Console.WriteLine(me is Human);
+            Console.WriteLine(me is Animal);
+
+            Console.WriteLine(me.GetType());
+            Console.WriteLine(me.GetType().BaseType.Name);
+
+            Human buyer = new Human(2000.0);
+            buyer.GiveSalary();
+
+            me.car.Sell(me, buyer, 1000.0);
+
 
             Console.ReadKey();
         }
