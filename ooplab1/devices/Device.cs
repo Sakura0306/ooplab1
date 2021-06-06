@@ -9,13 +9,14 @@ namespace ooplab1.devices {
     abstract class Device : ISellable {
         public String producer;
         public String model;
+        public decimal value;
         private int yearOfProduction;
 
         public int GetYearOfProduction() {
             return yearOfProduction;
         }
 
-        public virtual bool Sell(Human seller, Human buyer, double price) {
+        public virtual bool Sell(Human seller, Human buyer, decimal price) {
             throw new NotImplementedException();
         }
 

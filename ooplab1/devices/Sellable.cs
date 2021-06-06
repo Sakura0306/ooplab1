@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 
 namespace ooplab1.devices {
     interface ISellable {
-        bool Sell(Human seller, Human buyer, Double price);
+        bool Sell(Human seller, Human buyer, decimal price);
     }
 }
